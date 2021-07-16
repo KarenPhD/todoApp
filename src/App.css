@@ -13,6 +13,12 @@ body {
     padding-top: 20px;
 }
 
+@media only screen and (max-width: 600px) {
+    .display-5 {
+        display: none;
+    }
+}
+
 .alert {
     padding: 3px !important;
 }
@@ -28,7 +34,8 @@ body {
 
 .form-row {
     background-color: aliceblue;
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     width: 100%;
     justify-content: center;
     padding: 5px 0px 10px 0px;
@@ -51,15 +58,45 @@ body {
 }
 
 .new-task {
-    margin-top: 30px;
+    margin-top: 70px;
     width: 100%;
     justify-content: center;
     padding: 10px 0px 10px 0px;
+    color: #146e14;
 }
 
 .task-title {
     font-style: italic;
     font-size: 28px;
     margin-left: 20px;
+    margin-bottom: 40px;
     width: 200px;
 }
+
+table {
+    margin: auto; 
+    width: 50% !important;
+}
+
+tbody {
+    background: azure;
+    font-weight: 500;
+    justify-content: flex-start;
+    vertical-align: center !important;
+}
+
+th:last-child {
+    width: 50px;
+}
+
+.noTasks_text {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: serif;
+    margin: auto;
+    width: 367px;
+    margin-top: 25px;
+    color: #bb1e1e;
+}
+  
+

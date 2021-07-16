@@ -14,7 +14,7 @@ function Table({data, columns}) {
     });
 
     return (
-        <table {...getTableProps()}>
+        <table className="table table-sm" {...getTableProps()}>
             <thead>
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>

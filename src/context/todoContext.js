@@ -10,7 +10,7 @@ const todoReducer = (state, action) => {
                 ...state,
                 {
                     id: Math.floor(Math.random() * 99999),
-                    name: action.payload.name,
+                    task: action.payload.task,
                     endDate: action.payload.endDate,
                 },
             ];

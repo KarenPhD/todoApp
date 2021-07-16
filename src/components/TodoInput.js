@@ -2,15 +2,14 @@ import React, {useState, useContext} from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as yup from 'yup';
 import TextError from './TextError';
-import "react-datepicker/dist/react-datepicker.css";
-import Toggle from './Toggle';
 import {Context} from '../context/todoContext'
+import { string } from 'yup/lib/locale';
 
 const TodoInput = ({setToggleHide}) => {
     const {addTodoItem} = useContext(Context);
 
     const initialValues = {
-        name: '',
+        task: '',
         endDate: ''
     };
 
@@ -20,7 +19,7 @@ const TodoInput = ({setToggleHide}) => {
     };
 
     const validationSchema = yup.object({
-        name: yup
+        task: yup
             .string()
             .min(4, "Should contain at least 4 characters")
             .required('Required!'),
@@ -30,8 +29,8 @@ const TodoInput = ({setToggleHide}) => {
             .matches(
                 /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([1][26]|[2468][048]|[3579][26])00))))$/,
                 "The Date format is dd/mm/yyyy. Since 01/01/1900."
-            ),
-    });
+        ),
+    })
 
     return (
         <Formik
@@ -41,17 +40,17 @@ const TodoInput = ({setToggleHide}) => {
             <Form>
                 <div className="form-row d-flex">
                     <div className="form-group col-md-2">
-                        <label htmlFor="name">*Name</label>
+                        <label htmlFor="task">*Task</label>
                         <Field
                             type="text"
-                            id="name"
+                            id="task"
                             className="form-control"
-                            name="name"
+                            name="task"
                         />
-                        <ErrorMessage name="name" component={TextError}/>
+                        <ErrorMessage name="task" component={TextError}/>
                     </div>
                     <div className="form-group col-md-2">
-                        <label htmlFor="name">*End Date</label>
+                        <label htmlFor="endDate">*End Date</label>
                         <Field
                             type="text"
                             id="endDate"
