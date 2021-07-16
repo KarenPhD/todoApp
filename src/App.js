@@ -1,15 +1,14 @@
 import React from 'react'
 import './App.css';
 import Header from './components/Header';
-import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
-import Toggle from './components/Toggle';
+import ToggleForm from './components/ToggleForm';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <Toggle />
+      <ToggleForm />
       <TodoList />
     </div>
   )

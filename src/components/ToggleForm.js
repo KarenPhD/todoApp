@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import TodoInput from './TodoInput';
 
-const Toggle = () => {
+const ToggleForm = () => {
     const [toggleHide, setToggleHide] = useState(false);
 
     return toggleHide ?
@@ -19,4 +19,4 @@ const Toggle = () => {
     );
 };
 
-export default Toggle
+export default ToggleForm

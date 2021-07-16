@@ -1,9 +1,8 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as yup from 'yup';
 import TextError from './TextError';
 import {Context} from '../context/todoContext'
-import { string } from 'yup/lib/locale';
 
 const TodoInput = ({setToggleHide}) => {
     const {addTodoItem} = useContext(Context);
@@ -25,11 +24,17 @@ const TodoInput = ({setToggleHide}) => {
             .required('Required!'),
         endDate: yup
             .string()
-            .required('Required!')
-            .matches(
-                /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([1][26]|[2468][048]|[3579][26])00))))$/,
-                "The Date format is dd/mm/yyyy. Since 01/01/1900."
-        ),
+            .when('task', {
+                is: value => value && value.length > 0,
+                then: yup
+                .string()
+                .required('Required!')
+                .matches(
+                    /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([1][26]|[2468][048]|[3579][26])00))))$/,
+                    "The Date format is dd/mm/yyyy. Since 01/01/1900."
+                ),
+                otherwise: yup.string()
+            })
     })
 
     return (
