@@ -3,7 +3,9 @@ import CatsCategories from './components/CatsCategories';
 
 const App = () => {
   return (
-    <CatsCategories />
+    <div className="content">
+      <CatsCategories />
+    </div>
   )
 }
 

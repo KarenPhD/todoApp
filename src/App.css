@@ -15,6 +15,8 @@
   color: black;
   padding: 16px;
   text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 /* Active/current link */
@@ -26,7 +28,7 @@
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
   background-color: #555;
-  color: white;
+  color: white; 
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
@@ -40,6 +42,46 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+img {
+  width: 60%;
+  position: relative;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+}
+
+.category {
+  text-align: center;
+  color: darkblue;
+  font-weight: 700;
+}
+
+.category-content {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #6339e3dd;
+}
+
+.load-btn {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: darkcyan;
+    color: floralwhite;
+    width: 58%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    border-radius: 25px;
+    margin-top: 20px;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -58,5 +100,139 @@ ul {
   .sidebar a {
     text-align: center;
     float: none;
+  }
+}
+
+/* iPad Pro portrait*/
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2.0) {
+    img {
+      width: 60%;
+      position: relative;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 33%;
+    }
+
+    .category-content {
+      margin-left: 160px !important;
+    }
+
+    .load-btn {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 600;
+      background-color: darkcyan;
+      color: floralwhite;
+      width: 58%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      border-radius: 25px;
+      margin-top: 20px;
+      margin-left: 331px !important;
+  }
+}
+
+/* iPad Pro landscape*/
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2.0) {
+    img {
+      width: 60%;
+      position: relative;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 29%;
+    }
+
+    .category-content {
+      margin-left: 110px !important;
+    }
+
+    .load-btn {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 600;
+      background-color: darkcyan;
+      color: floralwhite;
+      width: 58%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      border-radius: 25px;
+      margin-top: 20px;
+      margin-left: 356px;
+  }
+}
+
+/* iPad portrait*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    img {
+      width: 60%;
+      position: relative;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 38%;
+    }
+
+    .category-content {
+      margin-left: 110px;
+    }
+
+    .load-btn {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 600;
+      background-color: darkcyan;
+      color: floralwhite;
+      width: 58%;
+      padding: 10px 10px;
+      border-radius: 25px;
+      margin-top: 20px;
+      margin-left: 231px;
+  }
+}
+
+/* iPad landscape*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    img {
+      width: 60%;
+      position: relative;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 33%;
+    }
+
+    .category-content {
+      margin-left: 110px !important;
+    }
+
+    .load-btn {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 600;
+      background-color: darkcyan;
+      color: floralwhite;
+      width: 58%;
+      padding: 10px 10px;
+      border-radius: 25px;
+      margin-top: 20px;
+      margin-left: 288px;
   }
 }
